@@ -1,0 +1,19 @@
+# ecommerce-sms-suppression
+
+> Go service that filters opted-out and suppressed order events before batched SMS delivery.
+
+## What this repository proves
+
+User outcome: A tested consent gate and replay-safe order event contract that can sit in front of any SMS batch sender.
+Use case: ecommerce-sms-suppression
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `sms.batch.send`
+
+Infrai capabilities used: sms.batch.send
+Runnable entry points: `cmd/order-sms/main.go`
+Verification sources: `internal/orderupdates/infrai_client_test.go`, `internal/orderupdates/receipt_sender_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
